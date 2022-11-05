@@ -3,6 +3,7 @@ const { connection } = require("./Config/db.js");
 
 
 const { UserModel } = require("./Models/UserModel.js");
+
 require("dotenv").config()
 
 const bcrypt = require("bcrypt")
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use(cors())
 
 
-const PORT= process.env.PORT || 8080
+const PORT= process.env.PORT||9090
 
 app.get("/", (req, res) => {
   console.log("Homepage");
@@ -106,7 +107,7 @@ app.get("/getCalculation", Authentication, async (req, res) => {
   // console.log(all_bmi)
   res.send({all_bmi})
 })
-
+console.log(PORT)
 app.listen(PORT, async () => {
   await connection;
   try {
