@@ -107,7 +107,7 @@ app.get("/getCalculation", Authentication, async (req, res) => {
   // console.log(all_bmi)
   res.send({all_bmi})
 })
-console.log(PORT)
+
 app.listen(PORT, async () => {
   await connection;
   try {
